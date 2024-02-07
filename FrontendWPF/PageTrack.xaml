@@ -1,0 +1,115 @@
+﻿<Page x:Class="WpfApp1.PageTrack"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d" 
+        d:DesignHeight="450" d:DesignWidth="800"
+      Title="Track Saves">
+
+    <!-- Les ressources de la Page -->
+    <Page.Resources>
+        <Style x:Key="TextBoxStyle" TargetType="TextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="3"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#FFABADB3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#FFABADB3"/>
+            <Setter Property="Background" Value="Azure"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!-- Style pour Button avec un template personnalisé -->
+        <Style x:Key="ButtonStyle2" TargetType="Button">
+            <Setter Property="Foreground" Value="#FF110D0D"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="1,5"/>
+            <Setter Property="Width" Value="200"/>
+
+            <!-- Adjust properties  -->
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#FF4D67AC"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <Border.Background>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                    <GradientStop Color="#FF7AC1FF" Offset="0"/>
+                                    <GradientStop Color="LightGreen" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
+    <!-- Content of the PageTrack page -->
+    <Grid Background="Azure">
+        <!-- Add the new StackPanel here -->
+        <StackPanel Margin="10,10,10,10" Cursor="Hand">
+
+
+            <Button x:Name="PerformAllBackupsButton" Content="Button" RenderTransformOrigin="0.471,0.469"  Style="{StaticResource ButtonStyle2}"  Click="PerformAllBackupsButton_Click" Cursor="Hand" VerticalContentAlignment="Center" MinWidth="250" MinHeight="55"  MaxHeight="55" FontSize="15" Height="16" HorizontalAlignment="Right">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="-1.739"/>
+                        <RotateTransform Angle="-0.824"/>
+                        <TranslateTransform X="1.351"/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+            </Button>
+
+
+            <TextBlock x:Name="mySaves" Text="MES SAUVEGARDES" FontWeight="Bold" FontSize="30" Margin="0,20,0,100" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="txtNoBackups" Text="Vous n'avez aucune sauvegarde" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" Visibility="Collapsed" />
+
+
+
+            <ListView x:Name="lvBackups" ItemsSource="{Binding backupGrids}" HorizontalContentAlignment="Stretch" Margin="0,10" SelectionMode="Extended" Height="Auto" MaxHeight="800" VerticalAlignment="Top"/>
+        </StackPanel>
+
+
+    </Grid>
+
+</Page>
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,0 +1,114 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="EasySave 3.0" Height="450" Width="800"
+        FontFamily="Raleway Light"
+        WindowState="Maximized">
+    <Window.Resources>
+        <!-- Style pour les boutons animés -->
+        <Style x:Key="AnimatedButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="MediumAquamarine"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation Duration="0:0:0.1" To="20,10,0,10" Storyboard.TargetProperty="Margin"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ThicknessAnimation Duration="0:0:0.1" To="10,10,0,10" Storyboard.TargetProperty="Margin"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <!-- LOG OUT BUTTON PROPERTIES -->
+        <Style x:Key="QuitButtonStyle" TargetType="Button">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="LightCoral"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="10" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <!-- ORGANIZING CONTENT-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <!-- Sidebar,  20 pourcent of total largeur  -->
+            <ColumnDefinition Width="4*"/>
+            <!-- Content area 80 pourcent  -->
+        </Grid.ColumnDefinitions>
+
+        <!-- Sidebar dégradée  -->
+        <Grid Grid.Column="0">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="Azure" Offset="0"/>
+                    <GradientStop Color="#FFDDFFEE" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <!-- side bar rows  -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="70*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Viewbox Grid.Row="0" Margin="10">
+                <Image Source="easysavelogo.png" Height="90" Stretch="UniformToFill"/>
+            </Viewbox>
+
+            <StackPanel Grid.Column="0" Grid.Row="2" VerticalAlignment="Center">
+                <Button x:Name="NewSaveButton" Content="📁 Nouvelle sauvegarde" Style="{StaticResource AnimatedButtonStyle}" Click="NewSaveButton_Click" Cursor="Hand" />
+                <Button x:Name="LogsButton" Content="📜 Accès aux logs" Style="{StaticResource AnimatedButtonStyle}" Click="LogsButton_Click" Cursor="Hand"/>
+                <Button x:Name="SettingsButton" Content="⚙️ Paramètres" Style="{StaticResource AnimatedButtonStyle}" Click="SettingsButton_Click" Cursor="Hand"/>
+                <Button x:Name="TrackSavesButton" Content="🔍 Suivi des sauvegardes" Style="{StaticResource AnimatedButtonStyle}" Click="TracksButton_Click" Cursor="Hand"/>
+            </StackPanel>
+
+
+            <!-- log out button  -->
+            <Button x:Name="CloseButton" Content="❌ Quitter" Style="{StaticResource QuitButtonStyle}" Grid.Row="4" Click="CloseButton_Click" Cursor="Hand"/>
+        </Grid>
+
+        <!-- PageTrack content -->
+        
+        <Frame x:Name="MainContentFrame" Grid.Column="1" Margin="10" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
