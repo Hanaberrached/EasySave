@@ -12,7 +12,7 @@ EasySave est un logiciel de sauvegarde conçu pour vous permettre de créer des 
    - **Complète**: Sauvegarde tous les fichiers du dossier source vers le chemin cible, quelle que soit la composition du dossier cible.
 
    - **Différentielle**: Sauvegarde uniquement les fichiers modifiés ou inexistants dans le dossier cible.
-![Tracking back ups (/acceslogsen1.png)
+![Tracking back ups](/acceslogsen1.png)
 
 3. **Accès aux logs**: Vous redirige vers le fichier des journaux de sauvegarde.
 
