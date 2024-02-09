@@ -23,6 +23,7 @@ EasySave est un logiciel de sauvegarde conçu pour vous permettre de créer des 
 
 ##Sauvegardez vos données en toute confiance et simplicité grâce à notre logiciel de sauvegarde efficace. Merci de faire partie de notre communauté !
 
+---
 # EasySave(EN)
 
 EasySave is a backup software designed to enable you to create backups of your data with ease and security.
