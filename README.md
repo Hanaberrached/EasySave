@@ -36,11 +36,11 @@ When you launch the application for the first time, you will be prompted to view
 - **New Backup**: Allows you to create a backup. The application offers two types of backups:
   - **Complete**: Backs up all files from the source folder to the target path, regardless of the contents of the target folder.
   - **Differential**: Backs up only the modified or non-existent files in the target folder.
-![Tracking back ups](/easysavenewbakup.png)
+![New back up](easysavenewbakcup.png)
 
 - **Access to logs**: Redirects you to the backup log file.
-![Tracking back ups](/logsacces.png)
-![Tracking back ups](/acceslogsen1.png)
+![Log acces generation](/logsacces.png)
+![Log acces file](/acceslogsen1.png)
 
 - **Settings**: Allows you to modify the application settings, such as language, log format, and selection of files to ignore for future backups.
 
