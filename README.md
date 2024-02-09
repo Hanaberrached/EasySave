@@ -12,7 +12,6 @@ EasySave est un logiciel de sauvegarde conçu pour vous permettre de créer des 
    - **Complète**: Sauvegarde tous les fichiers du dossier source vers le chemin cible, quelle que soit la composition du dossier cible.
 
    - **Différentielle**: Sauvegarde uniquement les fichiers modifiés ou inexistants dans le dossier cible.
-![Tracking back ups](/acceslogsen1.png)
 
 3. **Accès aux logs**: Vous redirige vers le fichier des journaux de sauvegarde.
 
@@ -37,12 +36,16 @@ When you launch the application for the first time, you will be prompted to view
 - **New Backup**: Allows you to create a backup. The application offers two types of backups:
   - **Complete**: Backs up all files from the source folder to the target path, regardless of the contents of the target folder.
   - **Differential**: Backs up only the modified or non-existent files in the target folder.
+![Tracking back ups](/easysavenewbackup.png)
 
 - **Access to logs**: Redirects you to the backup log file.
+![Tracking back ups](/logsacces.png)
+![Tracking back ups](/acceslogsen1.png)
 
 - **Settings**: Allows you to modify the application settings, such as language, log format, and selection of files to ignore for future backups.
 
 - **Backup Tracking**: Returns you to the application's launch page where your backup tracking is displayed. Here, you can stop a backup, start or restart a backup, completely halt a backup, and access the log file in real time.
+![Tracking back ups](/easysavescreen1en.png)
 
 - **Quit**: Allows you to exit the application.
 
